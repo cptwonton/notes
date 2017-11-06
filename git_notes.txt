@@ -28,3 +28,26 @@ command as the effective config
 pull up git man pages with 
 git help <verb> //i.e git help config
 
+
+
+
+Getting a Git Repo
+can either init a pre-existing folder OR clone a repo elsewhere
+
+git init
+git add *.c
+git add LICENSE
+git commit -m 'initial project version'
+
+OR
+
+git clone <remote repo name>
+
+untracked files are unknown by git until you add them, untracked -> staged
+unmodified files are known by git but are unchanged since last snapshot, can either edit -> modified or remove -> untracked
+modified files are known by git and are changed since last snapshot, modified -> staged
+staged files are known by git and are ready to commit -> unmodified
+
+git status will tell me which files are in what state (untracked, unmodified, modified, staged)
+
+
