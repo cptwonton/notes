@@ -19,3 +19,14 @@ had to add settings.xml file to $(user.home)/.m2/
     </proxy>
   </proxies>
 </settings>
+
+mvn compile to simply compile the .java files and save resultant .class files into /target/classes directory
+mvn package to compile, run tests, and package it into either jar or war as defined in pom.xml
+mvn install to compile, run tests, package, and finally install it into the local .m2 repository directory
+
+to add tests, make new package under src: test.java.hello
+surefire searches for all *Test.java files by default
+at top of test file:
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.junit.Assert.*;
+import org.junit.Test;
