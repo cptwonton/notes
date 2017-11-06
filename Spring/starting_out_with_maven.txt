@@ -1,0 +1,21 @@
+https://spring.io/guides/gs/maven/#scratch
+
+update JAVA_HOME environmental variable to point to latest JDK
+create beginner greeter java project in eclipse
+run mvn compile from command line to test it out
+
+had to add settings.xml file to $(user.home)/.m2/
+
+<settings>
+  <proxies>
+   <proxy>
+      <id>http</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>proxy.usps.gov</host>
+      <port>8080</port>
+      <username>qtdwp0</username>
+      <password>************</password>
+    </proxy>
+  </proxies>
+</settings>
