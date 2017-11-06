@@ -50,4 +50,9 @@ staged files are known by git and are ready to commit -> unmodified
 
 git status will tell me which files are in what state (untracked, unmodified, modified, staged)
 
+//bookmark
+https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
+
+
+
 
