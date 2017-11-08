@@ -1,6 +1,6 @@
 ## Chapter 1
 came out of Linux/Bitkeeper fallout
-snapshots instead of diffs, means super efficient
+snapshots instead of diffs, means *super* efficient
 
 
 #### First-Time Git Setup
