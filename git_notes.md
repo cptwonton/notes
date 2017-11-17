@@ -46,6 +46,19 @@ OR
 
 `git status` will tell me which files are in what state (**untracked**, **unmodified**, **modified**, **staged**)
 
+`cat .gitignore`
+
+`*.[oa]` _.o and .a files, these are object and archive files, products of building code_
+
+`*~` _files ending in ~, these are temp files made by most text editors_
+
+!negate-these-patterns
+#ignore these lines
+/avoid recursivity
+directory/
+
+
+
 //bookmark
 https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
 
