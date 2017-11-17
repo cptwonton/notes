@@ -59,6 +59,20 @@ directory/
 
 [sample .gitignore](./.gitignore-sample)
 
+[more .gitignore samples on github](https://github.com/github/gitignore)
+
+`git diff` is a more specific version of `git status`. will answer two questions:
+- what changed but not staged? `git diff`
+- what staged but not committed? `git diff --staged`
+
+`git rm --cached <pattern/filename>` will remove a file from the staging area but not from disk/workspace
+
+`git mv <old file> <new file>` is shorthand for renaming a file and making sure git knows about it. otherwise, need to mv, rm, and add manually.
+
+
+
+
+
 
 //bookmark
 https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
