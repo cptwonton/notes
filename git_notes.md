@@ -57,6 +57,7 @@ OR
 /avoid recursivity
 directory/
 
+[sample .gitignore](./.gitignore-sample)
 
 
 //bookmark
