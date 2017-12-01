@@ -88,12 +88,50 @@ directory/
 - what changed but not staged? `git diff`
 - what staged but not committed? `git diff --staged`
 
-`git rm --cached <pattern/filename>` will remove a file from the staging area but not from disk/workspace
+`git rm --cached <pattern/filename>` will remove a file from the staging area but not from disk/workspace. useful for large log files, etc... things that I forgot to add to gitignore
+seems like `git reset HEAD <filename>` does the same thing as `git rm --cached <file/pattern>`
 
 `git mv <old file> <new file>` is shorthand for renaming a file and making sure git knows about it. otherwise, need to mv, rm, and add manually.
 
+#### Viewing Commit History
+`git log`, can call with a bunch of options
+
+`git checkout -- <filename>` to discard changes to filename
+
+#### Working with Remotes
+`git remote` to show shortnames for each remote handle defined
+`origin` is default name Git gives to server I cloned from
+`-v` to show URLs
+
+`git remote add <shortname> <url>`
+`git fetch <remote>` grabs all the stuff you don't have but is on the remote
+`git fetch origin`
+`git push <remote> <branch>`
+
+`git remote rename <oldname> <newname>`
+
+#### Tagging
+`git tag` lists all tags for repo
+`git tag -a v1.4 -m "my version 1.4"` creates a new (annotated) tag called v1.4 with message "my version 1.4"
+`git tag v1.4-lw` makes a lightweight tag without some of the info from the annotated tag
+`git tag -a v1.2 9fceb02` adds tag to old commit by providing commit's checksum
+`git push` does not automatically push tags up to remote. to do this individually, `git push origin <tagname>`. 
+if pushing multiple tags, `git push origin --tags`
+make sure to branch if making changes to tagged commits!!!
+
+#### Aliases
+`git config --global alias.co checkout`
+`git config --global alias.br branch`
+`git config --global alias.ci commit`
+`git config --global alias.st status`
+instead of typing `git commit`, can just type `git ci`
+prefix with ! to run external command. i.e., `git config --global alias.visual '!gitk'`
 
 
+## Chapter 3
+git branching is super lightweight, which is what makes git the best compared to other VCS.
+
+#### Branches
 
 
 
