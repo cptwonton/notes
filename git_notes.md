@@ -133,6 +133,49 @@ git branching is super lightweight, which is what makes git the best compared to
 
 #### Branches
 
+blobs stores each file and its checksum
+tree stores collection of blobs
+commits point to a tree, includes previous commit sha
+branches point to a commit
+head points to a branch
+master is just like any other branch, nothing special except that its created by default
+
+`git branch testing` to create a new branch called testing. This makes a new branch, points it to the latest commit, but does not switch to it - HEAD will still point to the current branch, not testing.
+Confirm with `git log --oneline --decorate`
+switch branches with `git checkout <branchname>`, like `git checkout testing`
+
+branching is super cheap, only costs 41 bytes
+
+#### Basic Branching and Merging
+
+`git checkout -b iss53` to create a new branch called iss53 and swap to it
+equivalent to `git branch iss53` + `git checkout iss53`
+git will not let you switch branches if you have unstaged/uncommited files in workspace that conflict with branch to be switched to.
+after making changes to hotfix branch, `git checkout master` + `git merge hotfix` will bring master up to date with hotfix branch
+
+to delete a branch, git branch -d hotfix
+
+sometimes, merge conflicts happen. will pause merge process to let you resolve. `git status` to see which files need to be manually merged
+once you manually merge, running `git add` on each file that you manually merged will be all git needs to continue the merge
+once you are completely done and `git status` shows that things are good, `git commit` to finalize the merge commit.
+
+#### Branch Management
+
+`git branch` shows you all the branches. * means that a branch is the HEAD
+`git branch -v` shows the last commit on each branch
+--merged and --no-merged options for `git branch` show you which branches you have or have not merged yet into the branch you're currently on
+
+#### Branching Workflows
+
+since its super easy to merge branches, alot of projects have long running branches. 
+master will only hold code that is entirely stable.
+develop/next branch holds work they're working on or used to test stability. whenever it's stable, it's merged into master. pulls in topic branches (small short lived branches to address certain issues) before merging into master.
+topic branches are short lived branches that you make for a single piece of work. unique to git because of how easy it is to branch - other VCS, topic branches are too expensive to be useful.
+
+#### Remote Branches
+
+get full list of remote references with `git ls-remote [remote]` or `git remote show [remote]`
+
 
 
 //bookmark
