@@ -9,3 +9,5 @@ To generate mvn file structure
 
 `mvn dependency:resolve` to list all the dependencies and their transitive dependencies
 `mvn dependency:tree` will draw out a visual tree showing the same info as above
+
+`mvn install -X` -X is the mvn debug flag, shows you everything that is going on in the background
