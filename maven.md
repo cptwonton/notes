@@ -8,4 +8,4 @@ To generate mvn file structure
 `mvn help:describe -Dplugin=exec -Dfull` list all goals for the exec plugin (exec is not default maven plugin)
 
 `mvn dependency:resolve` to list all the dependencies and their transitive dependencies
-
+`mvn dependency:tree` will draw out a visual tree showing the same info as above
