@@ -3,4 +3,4 @@ To generate mvn file structure
 
 `mvn help:effective-pom` to generate effective POM.xml
 
-
+`mvn exec:java -Dexec.mainClass=org.sonatype.mavenbook.weather.Main -Dexec.args="70112"` to execute a java main class with passed in arg
