@@ -11,3 +11,5 @@ To generate mvn file structure
 `mvn dependency:tree` will draw out a visual tree showing the same info as above
 
 `mvn install -X` -X is the mvn debug flag, shows you everything that is going on in the background
+
+`type nul > your_file.txt` is equivalent to `touch your_file.txt` in linux
