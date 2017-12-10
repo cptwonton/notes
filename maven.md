@@ -15,3 +15,5 @@ To generate mvn file structure
 `type nul > invoker.properties` is equivalent to `touch invoker.properties` in linux
 add properties to invoker.properties file to customize the maven invoker plugin during integration testing
 invoker.goals = starts clean will make the integration test run the starts goal followed by the clean goal on the starts plugin
+
+`mvn verify -Dinvoker.test=first-test` to specifically run + verify just the first-test integration test
