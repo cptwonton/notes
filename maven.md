@@ -12,4 +12,6 @@ To generate mvn file structure
 
 `mvn install -X` -X is the mvn debug flag, shows you everything that is going on in the background
 
-`type nul > your_file.txt` is equivalent to `touch your_file.txt` in linux
+`type nul > invoker.properties` is equivalent to `touch invoker.properties` in linux
+add properties to invoker.properties file to customize the maven invoker plugin during integration testing
+invoker.goals = starts clean will make the integration test run the starts goal followed by the clean goal on the starts plugin
