@@ -21,6 +21,12 @@ push merged local repo back up to remote
 
 ``git push origin STARTS-LOGGING``
 
+rebasing:
+``git checkout <branch you're rebasing>``
+``git rebase <branch you're rebasing to>``
+resolve conflicts, ``git add .`` and ``git rebase --continue`` after each conflict resolution
+``git push origin <branch> -f`` after rebase is done
+
 ## Chapter 1
 came out of Linux/Bitkeeper fallout
 snapshots instead of diffs, means *super* efficient
