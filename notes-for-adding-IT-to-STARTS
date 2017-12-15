@@ -1,0 +1,136 @@
+Starts core is completely separate from starts plugin based on the starts plugin POM
+But starts plugin depends on starts core
+
+Build has 3 plugins:
+	- maven-surefire
+	- maven-plugin
+		- goalPrefix: starts
+		- executions: mojo-descriptor with descriptor goal
+		- executions: help-goal with helpmojo goal
+	- maven-invoker
+		- executions: integration-test with install, integration-test, integration-test, verify goals
+
+Lifecycle xml specifies a single lifecycle called starts
+it has two phases, one to process-test-classes with an execution goal of run
+The second phase is test
+
+src/main/java/edu/illinois/starts/jdeps has a bunch of mojo.java files
+
+Src/it has all the integration tests
+mvn integration-test runs all the integration tests
+A run of this results in all these things being done:
+Reactor build order is starts, then starts-core, and then finally starts maven plugin
+
+when it gets to the starts plugin, maven-invoker will first do install, and then run integration-test twice, and finally will (verify - “run any checks on results o integration tests to ensure quality criteria are met”, but I don’t see this in the log…)
+
+Integration-test seems to run a bunch of integration tests, each with their own pom. These test “basic usage scenarios of STARTS. See tags in each IT for explanation of what it tests” - where are the tags??
+	- base-it
+
+	- first-it 
+		tests the basic case with code change, if there is a change between two versions, then the affected test should be run the second time as well
+
+	- missing-reflection-it 
+		tests behavior STARTS when there are missing edges due to reflection. Although we change Simple.java between runs, no test is selected because without reflection-awareness, simplest.java does not depend on simple.java
+
+	- multilevel-no-parents-or-siblings-it
+				
+
+	- no-parents-or-siblings-it
+
+	- one-class-two-tests-it
+
+	- transitive-it
+
+To add more tests, refer to first-it which provides basic usage of verify.groovy to check IT output and setup.groovy to change source code between consecutive runs of starts.
+
+All run setup.groovy followed by verify.groovy except base-it.
+Only after a given IT runs verify.groovy does maven say that an IT is successful
+
+Majority of time is spent within STARTS maven Plugin - only 1.6 seconds spent in STARTS, and 5.6 seconds spent in starts-core, whereas 1min 24s spent in STARTS Maven Plugin
+
+Setup.groovy
+Imports edu.illinois.starts.jdeps.SetupUtil;
+Creates a new setupUtil object with a new File called deps.zlc
+Creates a new file object pointing to src/main/java/first/First.java
+Replaces all the “Set<Integer>” in First.Java with just “Set”
+
+
+Verify.groovy
+Makes a new firstRun file object pointing to first-run.txt
+verifyUtil creates a new VerifyUtil object, with a passed in build.log file
+Finally, if first-run.txt does not exist, it will create it
+If it does exist, it will delete first-run.txt and .starts/deps.zlc
+
+First.java is a really simple class with methods that don’t really do anything. 
+
+
+mvn starts:help #list all goals
+
+
+mvn starts:diff #find types that changed semantically
+Displays all java types (including classes, interfaces, and enums) that changed since the last time STARTS was run.
+
+mvn starts:impacted # find types impacted by changes
+Displays all types (not just test cases) that are impacted by the changes, thereby providing means for change-impact analysis
+
+mvn starts:select #find (but not run) impacted tests
+allows developers more flexibility to first select impacted tests and run later
+
+mvn starts:starts #find and run impacted tests
+Performs functions of above RTS related goals, plus executing
+
+mvn starts:clean #delete STARTS artifacts
+Deletes stuff in a .starts directory to reset STARTS - all tests will be selected next time starts is run
+
+update*Checksums option defaults to true for starts goal, but false for all other goals. Lets you chose whether to update checksums or not.
+
+Tests are selected at the test class level, not test method!!!!
+
+Dependencies are also computed at class level, not method level!!!
+
+Find dependencies by analyzing code
+Reads constant pool using oracle jdeps pool because it’s faster than using ASM to parse entire classifies. Calls jdeps api using single call to parse all classifies at once, processes jdeps output in memory to find dependencies for each type.
+
+Construct TDG to build class firewall
+Custom library called yasgl to construct graphs and find tests that transitively reach some changed type. Uses info gathered from jdeps to construct edges. Originally used jgrapht but yasgl is faster.
+
+Find changed types between two revs by computing and comparing checksums
+Uses same checksum function as ekstazi to compute smart checksums
+If file no longer exists, checksum is deleted
+If new file, adds checksum to storage
+If different checksum but same file, starts marks that type as changed
+If no checksums stored, all tests are run
+In ekstazi and starts prototype, tests-to-types checksums computed. Starts discovers many more test dependencies than ekstazi due to imprecision of static analysis. Dependency storage format in STARTS is reversed, reduces amount of repetitive checking of test dependencies by storing a type-to-tests mapping. Stored in single file mapping from each type in the application to tests that depend on that type. File stored in .starts directory. One file per module. Updating checksums that are stored.
+
+update checksums with latest computed
+
+
+select tests impacted by changed types
+Uses type-to-tests dependency mapping from previous rev. And set of all changed types to find tests that are not impacted. Then computes impacted tests as diff between set of all tests in current revision and set of non-impacted tests.
+
+Run impacted tests
+STARTS configures the surefire plugin to ignore certain tests and run all the others.
+
+STARTS OPTIONS:
+Caching jdeps output in jdeps-cache directory, names of files match the group/artificatid/revision convention of naming maven based projects, have a .graph extension.
+Can specify -DgCache=${GRAPH_CACHE} to provide input cache
+
+File format for checksums and dependencies:
+Type-to-tests (new) is called ZLC format
+Test-to-types (old) is called CLZ format.
+
+ZLC is default file format.
+To run STARTS using the CLZ file format, mvn starts:starts -DdepFormat=CLZ
+
+Artifact storage:
+When running default logging Level.INFO, STARTS stores only checksum and dependency file, .starts/deps.zlc between runs.
+At Level.FINEST, STARTS stores all its files: list of all impacted/non-impacted tests, dependencies that jdeps computed, class path that STARTS used, yasgl graph that STARTS constructs internally, and set of changed types.
+level.FINER will store only .starts/deps.zlc, set of impacted tests, and set of all tests.
+To run STARTS and store all its files, mvn starts:starts -DstartsLogging=FINEST
+
+
+
+
+
+
+
