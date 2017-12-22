@@ -92,3 +92,34 @@ OR, https://www.es6.console.com
 - Web page should be able to function just fine with just HTML, most barebones
 - Otherwise, causes 'code soup' or 'code of spaghetti'
 
+- Graceful Degradation: building web app so it works best in modern browser but still works fine in older ones
+  - like HD tv shows, work great in HD tv but still work on SD tv
+- Progressive Enhancement: building web page with base functionality, then adding extra enhancements
+
+###### Don't Break the Web
+- All JS code needs to be backwards compatible
+- Means JS can't do anything that isn't already possible in previous versions, only adds syntactic sugar
+- Also means we can transpile JS5 code into JS3 code
+- Since JS comes out new version every year, will probably need to use transpiling tool (Babel) at some point. 
+- otherwise, browsers will not be able to run latest and greatest JS features
+`<script src='https://unpkg.com/babel-standalone@6/babel.min.js'></script>`
+`<script type='text/babel' src='main.js'></script>`
+
+#### Chapter 2
+
+- can use semicolons, or no semicolons - doesn't matter
+- but semicolons is considered best practice
+- can use as much whitespace (tabs, spaces, new lines) to separate different parts of each statement
+
+`const` used to make primitives immutable
+primitives:
+- String
+- Symbol
+- Number
+- Boolean
+- Undefined
+- Null
+
+
+
+
