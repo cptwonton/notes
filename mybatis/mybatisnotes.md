@@ -33,6 +33,7 @@
 
 `try {`
 ` BlogMapper mapper = session.getMapper(BlogMapper.class);`
+
 `  // do work`
   
 `} finally {`
