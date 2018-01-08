@@ -20,3 +20,40 @@
 - Aspect Oriented Programming (AOP), i.e., logging and caching and security are separate from business logic
   - key unit in OOP is a class, key unit in AOP is aspect
   
+#### IoC Containers
+- core of Spring framework
+  - creates objects
+  - wires objects together
+  - configure objects
+  - manage complete life cycle of objects from creation till destruction
+- uses DI to manage components that make up an app
+- objects are called Spring Beans
+- input POJOs + config metadata (XML, java annotations, java code), output bean
+- two types of containers:
+  - Spring BeanFactory Container
+    - simplest container
+    - provides basic support for DI
+    - defined by org.springframework.beans.factory.BeanFactory interface
+  - Spring ApplicationContext Container
+    - enterprise-specific functionality like resolving textual messages from properties file
+    - publish application events to event listeners
+    - defined by org.springframework.context.ApplicationContext interface
+- ApplicationContext does everything BeanFactory does, so applicationcontext > beanfactory except when we care about being lightweight for speed or data volume
+
+#### Beans
+- objects that form the backbone of app, managed by Spring IoC containers
+- created with config metadata, which defines for the container:
+  - how to create a bean
+  - bean lifecycle
+  - dependencies
+
+###### Bean Scopes
+- specified when defining a bean
+- `prototype` forces Spring to create new bean instance every time one is needed. use for stateful beans
+- `singleton` forces Spring to reuse the same bean instance (default). use for stateless beans
+- `request`, `session`, `global-session` only available to web-aware ApplicationContext container
+
+###### Bean Lifecycle
+- simple. when starts up, does `init-method` to get bean into usable state. when no longer required and removed from container, `destroy-method` is run
+- can be done either in xml config metadata xml, OR by implementing InitializingBean interface's `afterPropertiesSet()` method and/or DisposableBean interface's `destroy()` method.
+
