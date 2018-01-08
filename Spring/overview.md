@@ -17,4 +17,6 @@
 - convenient API to translate technology specific exceptions into consistent, unchecked exceptions
 - IoC containers are more lightweight compared to EJB containers
 - Dependency Injection, one form of Inversion of Control (IoC), makes things more modular and allows for good testing practices
-
+- Aspect Oriented Programming (AOP), i.e., logging and caching and security are separate from business logic
+  - key unit in OOP is a class, key unit in AOP is aspect
+  
