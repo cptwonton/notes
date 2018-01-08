@@ -10,4 +10,11 @@
 - allows developers to develop enterprise-class apps using POJOs (plain-old java objects)
   - do not need an EJB container product, like app server
   - can instead use robust servlet container like Tomcat
-- 
+- modular, so pick and chose what I want
+- reuses existing technologies like logging frameworks, timers, etc...
+- testing is very easy using depedency injection and bc environment-dependent code is moved into the framework
+- Spring's web framework is MVC
+- convenient API to translate technology specific exceptions into consistent, unchecked exceptions
+- IoC containers are more lightweight compared to EJB containers
+- Dependency Injection, one form of Inversion of Control (IoC), makes things more modular and allows for good testing practices
+
