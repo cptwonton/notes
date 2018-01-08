@@ -8,4 +8,14 @@ where
 - cacerts is a file, use /cacerts if it's a folder
 - sonar is the alias
 
+## Setting CLASSPATH
+
+to give the java compiler access to certain jar files
+
+can do so either all the time (classpath) or per application (cmd)
+
+detailed here:
+
+https://docs.oracle.com/javase/7/docs/technotes/tools/windows/classpath.html
+
 
