@@ -56,4 +56,9 @@
 ###### Bean Lifecycle
 - simple. when starts up, does `init-method` to get bean into usable state. when no longer required and removed from container, `destroy-method` is run
 - can be done either in xml config metadata xml, OR by implementing InitializingBean interface's `afterPropertiesSet()` method and/or DisposableBean interface's `destroy()` method.
+- if many classes all with same init/destroy method names, can use default specified in config metadata
+
+###### Bean Post Processors
+- BeanPostProcessor interface defines callbacks to implement custom instantiation logic, dependency-resolution logic, etc.
+
 
