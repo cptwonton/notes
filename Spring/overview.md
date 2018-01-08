@@ -61,4 +61,19 @@
 ###### Bean Post Processors
 - BeanPostProcessor interface defines callbacks to implement custom instantiation logic, dependency-resolution logic, etc.
 
+###### Bean Definition Inheritance
+- Child beans can inherit from parent bean config metadata
+- Can also override parent bean's config data
+- Specify parent attribute in child bean's config metadata, with parent attribute set to parent bean's name
+- Bean Templates, has `abstract=true` attribute, and is missing `class` attribute. Cannot be instantiated, only used as template for child beans to inherit from
+
+###### Dependency Injection
+- Inversion of Control, passes instance and implementation of SpellChecker to TextEditor class rather than having TextEditor create its own SpellChecker instance
+- Or, can also use setter methods that are called during bean instantiation
+- rule of thumb is to use constructor for mandatory dependencies and setters for optional dependencies
+
+###### Inner Beans
+- just like inner Java classes are defined within an outer class' scope, inner beans are defined within an outer bean's scope
+- 
+
 
