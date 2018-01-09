@@ -48,5 +48,18 @@
 - broadest scope is same as sqlsession, at most
 - do not need to kill mapper instance, will auto delete
 
+-
+ -#### MapperXML files
+ -- true power of MyBatis is in mapped statements - this is where the magic happens.
+ -- relatively simple
+ -- savings of 95% of code compared to JDBC
+ -
+ -Has a few first class elements:
+ -- cache (configuration of the cache for a given namespace, missing from servicedatemapper.xml)
+ -- cache-ref (reference to a cache configuration from another namespace, missing from servicedatemapper.xml)
+ -- resultMap (used to convert database result sets -> my java objects)
+ -- sql (reusable SQL code, can be referenced by other statements)
+ -- various CRUD statements, mapped (insert, update, delete, select)
+
 ## Configuration
 - 
