@@ -138,7 +138,7 @@ But in JS, primitive data types are wrapped in wrapper objects, so even primitiv
 good habit to use const keyword to declare variable names
 
 Symbols are used to store string values. New Primitive in ES6. Must be unique. Used for properties to ensure property names do not clash.
-
+###### Numbers
 Numbers can be integers or floating point numbers. JS does not distinguish between ints and floats, both are just called numbers.
 
 - _0x_ AF is hex
