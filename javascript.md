@@ -164,3 +164,6 @@ OR
 `const number = 5;`
 `number.toExponential();`
 
+###### Rounding
+- `const PI = 3.1415926;`
+- `PI.toFixed(3)` >> "3.142"
