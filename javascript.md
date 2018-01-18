@@ -227,3 +227,17 @@ OR
 - can also be written as <condition> ? (<if condition is true>) : (<if condition is false>);
 - depends on readability
 
+###### Switch
+- always finish each case with a `break`, otherwise it will fall thru. May be intended, but it can be confusing and is a hack.
+- can have default case at the bottom for when none of the cases are true
+
+###### Enumerables
+- Maps, Sets are enumerable
+- weak maps and weak sets are not!
+- Sets:
+  - can use for of loop. `for (const letter of letters) {console.log(letter)};};
+- Maps:
+  - can also use for of loop, but over
+    - mapname.entries()
+    - mapname.values()
+    - mapname.keys()
