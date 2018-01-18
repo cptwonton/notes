@@ -111,6 +111,10 @@ OR, https://www.es6.console.com
 - but semicolons is considered best practice
 - can use as much whitespace (tabs, spaces, new lines) to separate different parts of each statement
 
+###### Scope
+- `const` and `let` are used to block scope variable declarations and assignments
+- `var` is function scoped
+
 `const` used to make primitives immutable
 primitives:
 - String
