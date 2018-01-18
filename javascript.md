@@ -171,3 +171,16 @@ OR
 ###### Rounding
 - `const PI = 3.1415926;`
 - `PI.toFixed(3)` >> "3.142"
+
+###### Boolean
+- all values are either truthy or falsy
+- only 9 falsy values, all others are true:
+  - ""
+  - ''
+  - ``
+  - 0
+  - -0
+  - NaN
+  - false
+  - null
+  - undefined
