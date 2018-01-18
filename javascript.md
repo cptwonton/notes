@@ -120,6 +120,47 @@ primitives:
 - Undefined
 - Null
 
+primitives are assigned by value, non-primitives assigned by reference
+variables that start with _ are generally private properties/methods - do not start my own variables with _!!!
 
+$ is used by jQuery library, do not use this for my own variables
 
+escape character is \
+so "it's me" is the same as 'it\'s me'
+\n end of line
+\r carriage return
+\t tab
+to write backslash, \\
+
+Usually, only objects have properties and methods.
+But in JS, primitive data types are wrapped in wrapper objects, so even primitives have properties and methods (kind of like Java)
+
+good habit to use const keyword to declare variable names
+
+Symbols are used to store string values. New Primitive in ES6. Must be unique. Used for properties to ensure property names do not clash.
+
+Numbers can be integers or floating point numbers. JS does not distinguish between ints and floats, both are just called numbers.
+
+- _0x_ AF is hex
+- _0o_ 47 is octal
+- _0b_ 1010 is binary
+
+5..toExponential();
+> "5e+0"
+OR
+
+5 .toExponential();
+
+OR
+
+5.0.toExponential();
+
+OR
+
+(5).toExponential();
+
+OR
+
+`const number = 5;`
+`number.toExponential();`
 
