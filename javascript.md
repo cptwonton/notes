@@ -184,3 +184,46 @@ OR
   - false
   - null
   - undefined
+
+###### Equality
+- hard vs soft equality
+- soft equality uses coercion to compare values
+- hard equality does not, so will only return true if values are the same value AND the same type
+- should always use hard equality to avoid issues with JS' type coercion feature
+
+#### Chapter 3
+
+###### Arrays
+- ordered list of values
+- `const myArray = [];`
+- `const myArray = new Array();`
+- should use literal way to do it
+- not primitive - arrays are objects
+- can use spread operator `...` to work with arrays or anything that is an iterator
+- arrayname.splice(x, y, z); is super powerful.
+  - x is which index to start at
+  - y is how many entries to remove, can be zero
+  - z is what to insert, optional parameter if don't want to insert anything
+  - powerful, but dangerous because it permanently changes the array
+  
+###### Sets
+- simpler than arrays because no duplicates
+- also more efficient at running .includes() method
+- `const list = new Set();`
+- no literal way to create Sets
+- `list.add(1);`
+- easy way to eliminate duplicates from arrays, can Object.assign([], <setname>); to go back to array but this is not a deep clone
+- <setname>.has(<itemtocheckfor>); super efficient, much faster than includes or indexOf() methods used in arrays
+
+###### Maps
+- more flexible than Objects, can use any datatype as key whereas Object can only use String
+- used exclusively for storage and retrieval of values
+- can use size property to find size, no such feature for Objects
+- `const map = new Map();`
+- no literal way to create Maps
+- `const heroes = new Map( [ [ 'Clark Kent', 'Superman' ], [ 'Bruce Wayne', 'Batman' ] ] );`
+
+###### If
+- can also be written as <condition> ? (<if condition is true>) : (<if condition is false>);
+- depends on readability
+
