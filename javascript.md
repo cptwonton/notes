@@ -290,4 +290,5 @@ OR
 - `function sing(song,callback) { console.log("I'm singing along to ${song}."); callback(); }`
   - will invoke `callback` function 
   - can ensure callback is indeed function, `typeof(callback) === 'function';`
-  
+  - can also pass anonymous function instead of function name
+    - `sing('Let It Go',()=>{ console.log("I'm standing on my head."); })`
