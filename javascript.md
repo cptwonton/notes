@@ -276,3 +276,18 @@ OR
   - `const square = x => x*x;` \\\\one parameter
   - `const add = (x,y) => x + y;` \\\\two parameters
   - `const hello = () => alert('Hello World!');` \\\\no parameters
+- arrow functions are perfect for short, anonymous functions. anything longer, better to use literal or constructor
+
+###### Hoisting
+- functions are automatically hoisted, if declared using `function` keyword
+- variables are hosted if declared with `var` keyword. assignment is not hoisted, though.
+  - best to declare with `const` and `let`, and not rely on hoisting
+- function expressions, when assigned to variable, act just like variables
+  - var variables hoisted, but function expression is not
+  - const,let not hoisted at all
+  
+###### Callbacks
+- `function sing(song,callback) { console.log("I'm singing along to ${song}."); callback(); }`
+  - will invoke `callback` function 
+  - can ensure callback is indeed function, `typeof(callback) === 'function';`
+  
