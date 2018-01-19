@@ -271,4 +271,7 @@ OR
   - `function rest(...args) {for (arg of args) {console.log(arg); } }`
   - ...args will turn all the passed in arguments into an array stored in args
   - basically, it's an improved version of arguments array-like object that is actually an array
-  
+- always put default parameters after non-default, otherwise purpose is defeated!
+- anonymous functions!
+  - `const square = x => x*x;`
+  - `const add = (x,y) => x + y;`
