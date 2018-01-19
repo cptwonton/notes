@@ -273,5 +273,6 @@ OR
   - basically, it's an improved version of arguments array-like object that is actually an array
 - always put default parameters after non-default, otherwise purpose is defeated!
 - anonymous functions!
-  - `const square = x => x*x;`
-  - `const add = (x,y) => x + y;`
+  - `const square = x => x*x;` \\one parameter
+  - `const add = (x,y) => x + y;` \\two parameters
+  - `const hello = () => alert('Hello World!');` \\no parameters
