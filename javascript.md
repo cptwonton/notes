@@ -334,5 +334,37 @@ OR
 - access properties in two ways
   - dot notation - i.e., `superman.name;` preferred way
   - bracket notation - i.e., `superman['name'];` useful only if property names are nonstandard (with a space), or if need to evaluate property name
+
+
+###### if properties or methods exist
+- `'city' in superman;` uses `in` keyword to see if 'city' property is inside superman object
+- can also use `hasOwnProperty()` method, will return false if property is inherited or if property does not exist
+- `Object.keys(objectname);` returns array of all properties/methods within a given object
+- can easily add new properties, i.e., `superman.city = 'Metropolis';`
+- properties show up in unspecified order, never rely on properties being in certain order
+- `delete superman.fly` will delete the fly property in the superman object
+
+###### namespacing
+- prevents naming collisions by using object literal pattern
+- the object is the namespace, so place everything grouped into a single object, and that object serves as a namespace to prevent collisions
+
+###### JSON
+- JavaScript Object Notation
+- invented by Douglas Crockford in 2001
+- extremely popular lightweight data-storage format
+- hits sweet spot for being both human and machine readable
+- property names are double-quoted
+- permitted values are:
+  - double-quoted strings
+  - numbers
+  - true
+  - false
+  - null
+  - arrays
+  - objects
+  - functions are NOT permitted, even though you can have functions in objects
+- `parse()` method takes a string of data in JSON format and returns a JS object
+- `stringify()` method does the opposite of parse() - takes a JS object and turns it into a JSON
+  - ignores functions when stringify-ing
 - 
 
