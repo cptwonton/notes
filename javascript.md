@@ -194,6 +194,7 @@ OR
 #### Chapter 3
 
 ###### Arrays
+- push(adds to end), unshift(adds to beginning), splice()
 - ordered list of values
 - `const myArray = [];`
 - `const myArray = new Array();`
@@ -266,3 +267,8 @@ OR
   - extra parameters can be accessed via arguments object, though
 - ES6 added default parameters feature
 - arguments is an array-like object, can be accessed like an array (arguments[0], arguments.length), but does not have slice(), join(), foreach(), etc.
+- can use rest operator:
+  - `function rest(...args) {for (arg of args) {console.log(arg); } }`
+  - ...args will turn all the passed in arguments into an array stored in args
+  - basically, it's an improved version of arguments array-like object that is actually an array
+  
