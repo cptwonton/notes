@@ -241,3 +241,28 @@ OR
     - mapname.entries()
     - mapname.values()
     - mapname.keys()
+
+#### Chapter 4 Functions
+- small, self contained mini program. reduces repetition, makes code easier to follow
+- first-class objects
+
+- can define in three ways:
+  - literally, like `function hello() { console.log("Hello World!"); }`
+  - anonymously, like `const goodbye = function() { console.log("Hello World!"); };` must end in semi-colon
+  - can also use `const hi = new Function(functionbody);`, but this is bad because:
+    - global scope no matter where its declared
+    - function body must be a string, which makes things difficult
+    
+###### Return values
+- can return nothing, in which case JS engines return `undefined`
+- or can return something specific, to be assigned to a variable like `const message = howdy();`
+  - return from howdy function assigned to message variable
+
+###### Arguments and Parameters
+- arguments are passed in during function invocation, parameters are set when function is defined
+- if function takes 3 arguments and only pass in 2, third argument will be set to `undefined`
+  - this may result in erroneous behavior
+- if function takes 3 arguments and pass in 4, fourth argument will be ignored and function will behave normally
+  - extra parameters can be accessed via arguments object, though
+- ES6 added default parameters feature
+- arguments is an array-like object, can be accessed like an array (arguments[0], arguments.length), but does not have slice(), join(), foreach(), etc.
