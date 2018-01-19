@@ -292,3 +292,47 @@ OR
   - can ensure callback is indeed function, `typeof(callback) === 'function';`
   - can also pass anonymous function instead of function name
     - `sing('Let It Go',()=>{ console.log("I'm standing on my head."); })`
+
+###### forEach()
+- array method, pass in an anonymous function with 3 parameters:
+  - value
+  - index
+  - full array this is being called on, without brackets
+  
+###### map()
+- array method, pass in function to be ran against each element in the array
+- exactly like Haskell map
+- `[1,2,3].map ( x=> 2*x);`
+- can take 3 parameters as well, just like forEach()
+
+###### reduce()
+- array method, pass in function that takes two parameters:
+  - cumulative value
+  - current value in array being inspected
+- `[1,2,3,4,5].reduce( (acc,val) => acc + val );`
+- second parameter, the one after the callback, is the starting value for the accumulator
+
+###### filter()
+- array method, pass in function that takes a single parameter, spits out true or false
+- returns array of values that pass the "filter"
+
+#### Chapter 5 Objects
+- self contained set of related values and functions
+- used to keep them all in the same place, organization
+- each property is a key value pair, separated by commas
+- if property name doesn't follow naming rules, needs to be quoted.
+  - i.e., 'real name' since it contains a space
+  - but in the real world, 'real name' would just be realName or real_name
+- all objects are mutable, even if declared with a const
+- can create using object literal or constructor:
+  - `const spiderman = {};`
+    - recommended
+  - `const spiderman = new Object();`
+    - not recommended
+- no literal way to create Sets and Maps because this is reserved for Objects!
+- very similar to Maps, but Maps are more flexibile since keys for objects can only be strings
+- access properties in two ways
+  - dot notation - i.e., `superman.name;` preferred way
+  - bracket notation - i.e., `superman['name'];` useful only if property names are nonstandard (with a space), or if need to evaluate property name
+- 
+
