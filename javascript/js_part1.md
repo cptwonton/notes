@@ -129,12 +129,12 @@ variables that start with _ are generally private properties/methods - do not st
 
 $ is used by jQuery library, do not use this for my own variables
 
-escape character is \
-so "it's me" is the same as 'it\'s me'
-\n end of line
-\r carriage return
-\t tab
-to write backslash, \\
+escape character is \\
+so "it's me" is the same as 'it\\'s me'
+\\n end of line
+\\r carriage return
+\\t tab
+to write backslash, \\\\
 
 Usually, only objects have properties and methods.
 But in JS, primitive data types are wrapped in wrapper objects, so even primitives have properties and methods (kind of like Java)
@@ -366,5 +366,4 @@ OR
 - `parse()` method takes a string of data in JSON format and returns a JS object
 - `stringify()` method does the opposite of parse() - takes a JS object and turns it into a JSON
   - ignores functions when stringify-ing
-- 
 
