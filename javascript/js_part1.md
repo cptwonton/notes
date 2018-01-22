@@ -149,24 +149,26 @@ Numbers can be integers or floating point numbers. JS does not distinguish betwe
 - _0o_ 47 is octal
 - _0b_ 1010 is binary
 
-5..toExponential();
-> "5e+0"
-OR
+- `5..toExponential();`
 
-5 .toExponential();
+- `> "5e+0"`
 
 OR
 
-5.0.toExponential();
+- `5 .toExponential();`
 
 OR
 
-(5).toExponential();
+- `5.0.toExponential();`
 
 OR
 
-`const number = 5;`
-`number.toExponential();`
+- `(5).toExponential();`
+
+OR
+
+- `const number = 5;`
+- `number.toExponential();`
 
 ###### Rounding
 - `const PI = 3.1415926;`
@@ -280,7 +282,7 @@ OR
 
 ###### Hoisting
 - functions are automatically hoisted, if declared using `function` keyword
-- variables are hosted if declared with `var` keyword. assignment is not hoisted, though.
+- variables are hoisted if declared with `var` keyword. assignment is not hoisted, though.
   - best to declare with `const` and `let`, and not rely on hoisting
 - function expressions, when assigned to variable, act just like variables
   - var variables hoisted, but function expression is not
