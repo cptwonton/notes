@@ -76,6 +76,40 @@
   - just like first/last child, may return text nodes, so be careful
 - `nodeValue` and `textContent` properties used on a element node to find the actual text
 
+###### Settings Element Attributes
+- setAttribute changes value of element's attributes
+  - `wonderWoman.setAttribute('class', 'villain');
+    - if class attribute doesn't exist, adds it and sets it to villain
+- `wonderWoman.getAttribute('class');`
+- can alternatively do `wonderWoman.className = `villain`;`
+- uses className and HTMLFor instead of class and for, since class and for are JS keywords
+- using className will overwrite the class entirely, better to use classList property instead
+- classList:
+  - add() will add a provided class
+  - remove() will remove a provided class
+  - toggle() will add if it doesn't exist, remove if it does
+  - contains() check if element has a particular class
 
+###### Creating Elements
+- createElement() method, takes a tag name and returns the element
+- `const flash = document.createElement('li');`
+- to create a text node underneath flash (since it's currently empty), `const flashText = document.createTextNode('Flash');`
+  - could also just do flash.textContent = 'Flash';
+- to link the text node to the element node, `flash.appendChild(flashText);`
+- insertBefore() will place a new element before another
+  - `heroes.insertBefore(aquaman,wonderWoman);`
+  - `heroes.removeChild(aquaman);`
+  - can easily add it back in since aquaman is stored in a variable
+- `parent.replaceChild(new,old);`
+- `heroes.innerHTML();` will return all the HTML within heroes parent as raw text
+  - also writeable. but any scripts within will not execute
+  - useful for inserting large amounts of HTML
+
+###### Live Collections
+- node lists returned by 
+  - `document.getElementsByClassName();`
+  - `document.getElementsByTagName();`
+- are live, will update in real time to reflect changes to the page
+- be careful when referencing stuff by index, since these live node lists may not have that element there anymore
 
   
