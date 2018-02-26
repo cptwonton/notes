@@ -28,16 +28,16 @@
     - `UPDATE`
     - `DELETE`
   - DDL statements define data structures (like tables) that make up the database
-    - CREATE creates a database structure, like CREATE TABLE or CREATE USER
-    - ALTER modifies a database structure, like ALTER TABLE
-    - DROP removes a database structure, like DROP TABLE
-    - RENAME changes the name of a database structure
-    - TRUNCATE removes all the rows from a table
+    - `CREATE` creates a database structure, like `CREATE TABLE` or `CREATE USER`
+    - `ALTER` modifies a database structure, like `ALTER TABLE`
+    - `DROP` removes a database structure, like `DROP TABLE`
+    - `RENAME` changes the name of a database structure
+    - `TRUNCATE` removes all the rows from a table
   - Transaction Control (TC) statements permanently record changes made to rows, or undo the changes
-    - COMMIT permanently records changes made to rows
-    - ROLLBACK undoes changes made to rows
-    - SAVEPOINT sets a save point to which you can roll back
+    - `COMMIT` permanently records changes made to rows
+    - `ROLLBACK` undoes changes made to rows
+    - `SAVEPOINT` sets a save point to which you can roll back
   - DCL (Data Control Language) change permissions on database structures
-    - GRANT gives another user access to database structures
-    - REVOKE prevents another user from accessing database structures
+    - `GRANT` gives another user access to database structures
+    - `REVOKE` prevents another user from accessing database structures
     
