@@ -40,4 +40,30 @@
   - DCL (Data Control Language) change permissions on database structures
     - `GRANT` gives another user access to database structures
     - `REVOKE` prevents another user from accessing database structures
-    
+   
+###### SQL\*PLUS
+- `SELECT SYSDATE from dual;`
+  - `dual` is a generic table with a single row, can be used to eval. expressions, or get the date
+  - `SYSDATE` is a built-in database function
+  - modify previous command with `edit`
+  - re-execute by typing `/`
+  
+###### SQL DEVELOPER
+- can also use SQL Developer as alternative to SQL\*PLUS
+- requires Java
+
+###### SQL\*PLUS extras
+- within SQL\*PLUS, run a script by `@ <path to the script>`
+- to exit SQL\*PLUS, `EXIT`
+` to disconnect/reconnect, `DISCONNECT` and `CONNECT`. this keeps SQL\*PLUS running
+
+###### Creating a DB user
+- `CREATE USER <username> IDENTIFIED BY <password>;`
+  - this only creates the user, does not give permissions so user is kinda useless at this point
+- `GRANT connect, resource TO store;`
+  - connect privilege allows user to log into the DB
+  - resource privilege allows user to create items like db tables
+
+
+  
+  
