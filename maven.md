@@ -17,3 +17,5 @@ add properties to invoker.properties file to customize the maven invoker plugin 
 invoker.goals = starts clean will make the integration test run the starts goal followed by the clean goal on the starts plugin
 
 `mvn verify -Dinvoker.test=first-test` to specifically run + verify just the first-test integration test
+
+`mvn help:effective-pom` on a simple pom.xml to combine basic pom with super pom/default pom/parent pom
