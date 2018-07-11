@@ -32,7 +32,7 @@ if permissions issues: https://docs.npmjs.com/getting-started/fixing-npm-permiss
 
 `npm outdated` will list all the outdated packages listed in package.json
 
-`npm uninstall <package_name>` will remove a package from node_modules
+`npm uninstall <package_name>` will remove a package from node_modules | `npm uninstall -g <package_name>`
 
 `npm uninstall --save <package_name>` will also remove it from package.json | --save-dev
 
