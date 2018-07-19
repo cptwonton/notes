@@ -42,3 +42,6 @@ does bin exist? :
 ```Shell
 $ test -d $HOME/bin || mkdir $HOME/bin
 ```
+
+#### Configuring VIM
+done by modifying the `$HOME/.vimrc` [file](./.vimrc)
