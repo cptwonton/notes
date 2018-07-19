@@ -43,5 +43,6 @@ does bin exist? :
 $ test -d $HOME/bin || mkdir $HOME/bin
 ```
 
-#### Configuring VIM
-done by modifying the `$HOME/.vimrc` [file](./.vimrc)
+#### Configuring text editors
+- vim: done by modifying the `$HOME/.vimrc` [file](./.vimrc)
+- nano: done by modifying the `$HOME/.nanorc` [file](./.nanorc)
