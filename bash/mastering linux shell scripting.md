@@ -60,27 +60,23 @@ $ command1 && command 2
 This means command 2 will execute if command 1 succeeds, i.e. if command 1 `exit`s with a `0` status
 ```Shell
 $ hello1.sh
-$ echo $?
+$ echo $? # viewing the `$?` variable allows us to see the exit status explicitly
 ```
-viewing the `$?` variable allows us to see the exit status explicitly
+
 
 ```Shell
-$0
+$0 #the name of the script itself
 ``` 
-is the name of the script itself
 ```Shell
-$1
+$1 #the first argument passed in
 ``` 
-is the first argument passed in
 ```Shell
-${10}
+${10} # the 10th argument, braces are necessary for more than 1 digit and also for evaluating variables
 ``` 
-is the 10th argument, braces are necessary for more than 1 digit and also for evaluating variables
 ```Shell
-$#
+$# #argument count, especially useful when we need to set the amount of arguments needed for correct script execution
 ```
-argument count, especially useful when we need to set the amount of arguments needed for correct script execution
 ```Shell
-$*
+$* #refers to all arguments
 ```
-refers to all arguments
+
