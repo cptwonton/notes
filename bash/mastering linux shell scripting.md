@@ -46,3 +46,21 @@ $ test -d $HOME/bin || mkdir $HOME/bin
 #### Configuring text editors
 - vim: done by modifying the `$HOME/.vimrc` [file](./.vimrc)
 - nano: done by modifying the `$HOME/.nanorc` [file](./.nanorc)
+
+#### Scripting basics
+- every script starts with `#!bin/bash`, this ensures script is interpreted using bash shell, no matter what shell we're on
+- `chmod +x $HOME/bin/hello1.sh`, this ensures our script is executable
+```Shell
+$ command1 || command 2
+```
+This means command 2 will execute if command 1 fails, i.e. if command 1 `exit`s with a status other than `0`
+```Shell
+$ command1 && command 2
+```
+This means command 2 will execute if command 1 succeeds, i.e. if command 1 `exit`s with a `0` status
+```Shell
+$ hello1.sh
+$ echo $?
+```
+viewing the `$?` variable allows us to see the exit status explicitly
+
