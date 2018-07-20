@@ -79,4 +79,8 @@ $# #argument count, especially useful when we need to set the amount of argument
 ```Shell
 $* #refers to all arguments
 ```
+`"$stuff"` is double quotes, meaning everything but `$` is protected. can still escape with a backslash \
+
+`'$stuff'` is single quotes, meaning everything is protected
+
 
