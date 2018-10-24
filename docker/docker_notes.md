@@ -9,4 +9,8 @@
 `docker container ls`
 `docker container ls --all`
 
-`docker run -p <machine port>:<container port> <container friendly name>`
+`docker run -d -p <machine port>:<container port> <container friendly name>`
+-d for detached (running in background)
+
+`docker container stop <containerID>`
+containerID comes from `docker container ls`
